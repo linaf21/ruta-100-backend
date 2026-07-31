@@ -82,3 +82,7 @@ Seguir la guía en `docs/EXPO_INTEGRATION.md`.
 ## 8) Costo
 
 Con 1-2 usuarios, el plan free de Supabase es suficiente para iniciar.
+
+## 9) Ejemplos de consumo
+
+- Revisa ejemplos listos con `curl` en `docs/API_EXAMPLES.md`.
