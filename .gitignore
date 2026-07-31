@@ -1,0 +1,13 @@
+# Local env files
+.env
+.env.local
+
+# Supabase local runtime
+.supabase/
+
+# Node
+node_modules/
+package-lock.json
+
+# OS
+.DS_Store

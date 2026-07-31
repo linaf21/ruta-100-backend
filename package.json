@@ -1,0 +1,13 @@
+{
+  "name": "ruta100-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Supabase backend for Ruta 100",
+  "scripts": {
+    "supabase:login": "npx supabase login",
+    "supabase:link": "npx supabase link --project-ref $SUPABASE_PROJECT_REF",
+    "db:push": "npx supabase db push",
+    "functions:deploy": "npx supabase functions deploy create-visited-entry",
+    "types:gen": "npx supabase gen types typescript --linked > database.types.ts"
+  }
+}
