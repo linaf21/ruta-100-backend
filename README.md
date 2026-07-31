@@ -52,6 +52,7 @@ Seguir la guía en `docs/EXPO_INTEGRATION.md`.
    - `create-visited-entry`
    - `toggle-favorite`
    - `get-my-progress`
+   - `upsert-profile`
 
 ## 7) Funciones disponibles
 
@@ -70,6 +71,13 @@ Seguir la guía en `docs/EXPO_INTEGRATION.md`.
    - favorites
    - total
    - progress
+
+4. `upsert-profile` (POST/PUT)
+- Body opcional:
+   - `{ "display_name": "Lina" }`
+   - `{ "avatar_url": "https://..." }`
+   - o ambos campos
+- Actualiza el perfil del usuario autenticado y retorna perfil actualizado.
 
 ## 8) Costo
 

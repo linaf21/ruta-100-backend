@@ -9,11 +9,12 @@
 - RPC function `get_my_progress()`
 - Edge function `toggle-favorite`
 - Edge function `get-my-progress`
+- Edge function `upsert-profile`
 
 ## Next suggested work
 
 1. Add product seed migration with demo rows and ownership strategy.
-2. Add profile update edge function (`update-profile`).
+2. Add profile avatar upload flow (signed upload + profile update integration).
 3. Add badge unlock rules table (config-driven instead of hardcoded threshold).
 4. Add idempotency key handling in write operations.
 5. Add simple API contract tests for edge functions.
