@@ -195,3 +195,22 @@ on public.badges
 for select
 to authenticated
 using (auth.uid() = user_id);
+
+create policy "badges_insert_own"
+on public.badges
+for insert
+to authenticated
+with check (auth.uid() = user_id);
+
+create policy "badges_update_own"
+on public.badges
+for update
+to authenticated
+using (auth.uid() = user_id)
+with check (auth.uid() = user_id);
+
+create policy "badges_delete_own"
+on public.badges
+for delete
+to authenticated
+using (auth.uid() = user_id);

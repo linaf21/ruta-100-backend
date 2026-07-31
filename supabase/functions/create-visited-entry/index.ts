@@ -65,7 +65,9 @@ Deno.serve(async (req) => {
       });
     }
 
-    if ((count ?? 0) >= 5) {
+    const totalVisited = count ?? 0;
+
+    if (totalVisited >= 5) {
       await admin.from("badges").upsert(
         {
           user_id: user.id,
@@ -77,7 +79,7 @@ Deno.serve(async (req) => {
       );
     }
 
-    return new Response(JSON.stringify({ ok: true, total_visited: count ?? 0 }), {
+    return new Response(JSON.stringify({ ok: true, total_visited: totalVisited }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });

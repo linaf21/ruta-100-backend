@@ -10,7 +10,9 @@
     "db:push": "npx supabase db push",
     "db:reset": "npx supabase db reset",
     "functions:serve": "npx supabase functions serve create-visited-entry --env-file .env",
+    "functions:serve:all": "npx supabase functions serve --env-file .env",
     "functions:deploy": "npx supabase functions deploy create-visited-entry",
+    "functions:deploy:all": "npx supabase functions deploy create-visited-entry && npx supabase functions deploy toggle-favorite && npx supabase functions deploy get-my-progress",
     "types:gen": "npx supabase gen types typescript --linked > database.types.ts"
   }
 }

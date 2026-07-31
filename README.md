@@ -48,8 +48,29 @@ Seguir la guía en `docs/EXPO_INTEGRATION.md`.
 - `visited_places`: lugares visitados
 - `badges`: logros básicos
 - `avatars` bucket en storage
-- Edge function `create-visited-entry`
+- Edge functions:
+   - `create-visited-entry`
+   - `toggle-favorite`
+   - `get-my-progress`
 
-## 7) Costo
+## 7) Funciones disponibles
+
+1. `create-visited-entry` (POST)
+- Registra una visita del usuario autenticado.
+- Si llega a 5 visitas, intenta otorgar la insignia `explorer_5`.
+
+2. `toggle-favorite` (POST)
+- Body: `{ "product_id": "<uuid>" }`
+- Agrega o elimina favorito para el usuario autenticado.
+
+3. `get-my-progress` (GET)
+- Devuelve resumen del usuario autenticado:
+   - visited
+   - badges
+   - favorites
+   - total
+   - progress
+
+## 8) Costo
 
 Con 1-2 usuarios, el plan free de Supabase es suficiente para iniciar.

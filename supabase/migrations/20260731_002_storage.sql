@@ -10,7 +10,7 @@ for insert
 to authenticated
 with check (
   bucket_id = 'avatars' and
-  (storage.filename(bucket_id) = auth.uid()::text || '-avatar')
+  auth.uid()::text = split_part(name, '/', 1)
 );
 
 create policy "avatars_select_public"
