@@ -21,18 +21,43 @@ Asegurar:
 
 ## 3) Flujo OAuth recomendado
 
-1. Generar redirect URI con `makeRedirectUri`.
-2. Llamar `supabase.auth.signInWithOAuth` con:
-   - `provider: "google"`
-   - `options.redirectTo`
-   - `options.skipBrowserRedirect: true`
-3. Abrir `openAuthSessionAsync`.
-4. En retorno, extraer `access_token` y `refresh_token`.
-5. Guardar sesion con `supabase.auth.setSession`.
+```ts
+import { makeRedirectUri } from 'expo-auth-session';
+import * as WebBrowser from 'expo-web-browser';
+import { supabase } from './lib/supabase';
+
+WebBrowser.maybeCompleteAuthSession();
+
+export async function signInWithGoogle() {
+  const redirectTo = makeRedirectUri({ scheme: 'ruta100' });
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo,
+      skipBrowserRedirect: true,
+    },
+  });
+
+  if (error) throw error;
+
+  const result = await WebBrowser.openAuthSessionAsync(data.url, redirectTo);
+  if (result.type === 'success') {
+    const url = result.url;
+    const params = new URL(url).searchParams;
+    const access_token = params.get('access_token');
+    const refresh_token = params.get('refresh_token');
+
+    if (access_token && refresh_token) {
+      await supabase.auth.setSession({ access_token, refresh_token });
+    }
+  }
+}
+```
 
 ## 4) Deep links
 
-Configurar listener para links entrantes y completar sesion si llega por URL.
+Configurar listener para links entrantes y completar sesión si llega por URL.
 
 ## 5) Seguridad
 
