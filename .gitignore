@@ -5,6 +5,9 @@
 # Supabase local runtime
 .supabase/
 
+# Local data sources for generated migrations
+data/places.seed.json
+
 # Node
 node_modules/
 package-lock.json

@@ -27,6 +27,17 @@ curl -X POST "https://$SUPABASE_PROJECT_REF.supabase.co/functions/v1/create-visi
   }'
 ```
 
+También puedes registrar visita por catálogo canónico:
+
+```bash
+curl -X POST "https://$SUPABASE_PROJECT_REF.supabase.co/functions/v1/create-visited-entry" \
+  -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "place_id": "00000000-0000-0000-0000-000000000000"
+  }'
+```
+
 ## 2) toggle-favorite
 
 ```bash

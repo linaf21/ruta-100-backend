@@ -86,3 +86,16 @@ Con 1-2 usuarios, el plan free de Supabase es suficiente para iniciar.
 ## 9) Ejemplos de consumo
 
 - Revisa ejemplos listos con `curl` en `docs/API_EXAMPLES.md`.
+
+## 10) Catálogo de 100 lugares reales
+
+Para poblar la base con tu lista oficial de lugares:
+
+1. Copia `data/places.seed.example.json` como `data/places.seed.json`.
+2. Completa los 100 lugares.
+3. Genera la migración:
+   - `npm run places:generate-migration`
+4. Aplica en Supabase:
+   - `npm run db:push`
+
+Guía completa: `docs/PLACES_IMPORT_GUIDE.md`.

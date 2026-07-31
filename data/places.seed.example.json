@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "catedral-de-sal-zipaquira",
+    "name": "Catedral de Sal",
+    "department": "Cundinamarca",
+    "region": "Andes",
+    "category": "Cultura",
+    "description": "Obra subterránea construida en una mina de sal en Zipaquirá.",
+    "latitude": 5.0189,
+    "longitude": -74.0059,
+    "image_url": "https://images.unsplash.com/photo-1489515217757-5fd1be406fef",
+    "source_url": "https://es.wikipedia.org/wiki/Catedral_de_Sal_de_Zipaquir%C3%A1"
+  },
+  {
+    "slug": "piedra-del-penol-guatape",
+    "name": "Piedra del Peñol",
+    "department": "Antioquia",
+    "region": "Andes",
+    "category": "Naturaleza",
+    "description": "Monolito de 220 metros con vista al embalse de Guatapé.",
+    "latitude": 6.2342,
+    "longitude": -75.1589,
+    "image_url": "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1",
+    "source_url": "https://es.wikipedia.org/wiki/Piedra_del_Pe%C3%B1ol"
+  },
+  {
+    "slug": "valle-del-cocora-salento",
+    "name": "Valle del Cocora",
+    "department": "Quindío",
+    "region": "Andes",
+    "category": "Naturaleza",
+    "description": "Valle andino famoso por sus palmas de cera.",
+    "latitude": 4.6371,
+    "longitude": -75.4896,
+    "image_url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
+    "source_url": "https://es.wikipedia.org/wiki/Valle_de_Cocora"
+  },
+  {
+    "slug": "cano-cristales-la-macarena",
+    "name": "Caño Cristales",
+    "department": "Meta",
+    "region": "Orinoquia",
+    "category": "Naturaleza",
+    "description": "Río de los cinco colores en la Sierra de la Macarena.",
+    "latitude": 2.2647,
+    "longitude": -73.7941,
+    "image_url": "https://images.unsplash.com/photo-1470770903676-69b98201ea1c",
+    "source_url": "https://es.wikipedia.org/wiki/Ca%C3%B1o_Cristales"
+  },
+  {
+    "slug": "ciudad-perdida-sierra-nevada",
+    "name": "Ciudad Perdida",
+    "department": "Magdalena",
+    "region": "Caribe",
+    "category": "Aventura",
+    "description": "Sitio arqueológico Teyuna en la Sierra Nevada de Santa Marta.",
+    "latitude": 11.0375,
+    "longitude": -73.9258,
+    "image_url": "https://images.unsplash.com/photo-1518183214770-9cffbec72538",
+    "source_url": "https://es.wikipedia.org/wiki/Ciudad_Perdida_(Colombia)"
+  },
+  {
+    "slug": "desierto-de-la-tatacoa",
+    "name": "Desierto de la Tatacoa",
+    "department": "Huila",
+    "region": "Andes",
+    "category": "Naturaleza",
+    "description": "Paisaje semiárido ideal para observación astronómica.",
+    "latitude": 3.2326,
+    "longitude": -75.1680,
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b",
+    "source_url": "https://es.wikipedia.org/wiki/Desierto_de_la_Tatacoa"
+  },
+  {
+    "slug": "parque-tayrona",
+    "name": "Parque Nacional Natural Tayrona",
+    "department": "Magdalena",
+    "region": "Caribe",
+    "category": "Naturaleza",
+    "description": "Parque costero con playas y selva tropical.",
+    "latitude": 11.3033,
+    "longitude": -74.1270,
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    "source_url": "https://es.wikipedia.org/wiki/Parque_nacional_natural_Tayrona"
+  },
+  {
+    "slug": "santuario-las-lajas",
+    "name": "Santuario de Las Lajas",
+    "department": "Nariño",
+    "region": "Andes",
+    "category": "Cultura",
+    "description": "Basílica neogótica construida sobre el cañón del río Guáitara.",
+    "latitude": 0.8064,
+    "longitude": -77.5823,
+    "image_url": "https://images.unsplash.com/photo-1521292270410-a8c4d716d518",
+    "source_url": "https://es.wikipedia.org/wiki/Santuario_de_Las_Lajas"
+  },
+  {
+    "slug": "isla-gorgona",
+    "name": "Isla Gorgona",
+    "department": "Cauca",
+    "region": "Pacifico",
+    "category": "Naturaleza",
+    "description": "Parque nacional insular reconocido por su biodiversidad marina.",
+    "latitude": 2.9560,
+    "longitude": -78.1940,
+    "image_url": "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
+    "source_url": "https://es.wikipedia.org/wiki/Isla_Gorgona_(Colombia)"
+  },
+  {
+    "slug": "cerro-de-monserrate",
+    "name": "Cerro de Monserrate",
+    "department": "Bogotá D.C.",
+    "region": "Andes",
+    "category": "Cultura",
+    "description": "Mirador icónico de Bogotá con santuario en su cumbre.",
+    "latitude": 4.6053,
+    "longitude": -74.0556,
+    "image_url": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da",
+    "source_url": "https://es.wikipedia.org/wiki/Monserrate"
+  }
+]

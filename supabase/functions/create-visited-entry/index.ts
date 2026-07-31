@@ -29,10 +29,44 @@ Deno.serve(async (req) => {
     }
 
     const body = await req.json();
-    const { place_name, place_description, latitude, longitude } = body;
+    const { place_id, place_name, place_description, latitude, longitude } = body;
 
-    if (!place_name || typeof place_name !== "string") {
-      return new Response(JSON.stringify({ error: "place_name is required" }), {
+    let resolvedPlaceName = typeof place_name === "string" ? place_name : null;
+    let resolvedPlaceDescription = typeof place_description === "string" ? place_description : null;
+    let resolvedLatitude = typeof latitude === "number" ? latitude : null;
+    let resolvedLongitude = typeof longitude === "number" ? longitude : null;
+    let resolvedPlaceId: string | null = null;
+
+    if (typeof place_id === "string" && place_id.length > 0) {
+      const { data: place, error: placeError } = await admin
+        .from("places")
+        .select("id, name, description, latitude, longitude")
+        .eq("id", place_id)
+        .maybeSingle();
+
+      if (placeError) {
+        return new Response(JSON.stringify({ error: placeError.message }), {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
+
+      if (!place) {
+        return new Response(JSON.stringify({ error: "place_id does not exist" }), {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
+
+      resolvedPlaceId = place.id;
+      resolvedPlaceName = place.name;
+      resolvedPlaceDescription = place.description ?? resolvedPlaceDescription;
+      resolvedLatitude = typeof place.latitude === "number" ? place.latitude : resolvedLatitude;
+      resolvedLongitude = typeof place.longitude === "number" ? place.longitude : resolvedLongitude;
+    }
+
+    if (!resolvedPlaceName || resolvedPlaceName.trim().length === 0) {
+      return new Response(JSON.stringify({ error: "place_name is required when place_id is missing" }), {
         status: 400,
         headers: { "Content-Type": "application/json" },
       });
@@ -40,10 +74,11 @@ Deno.serve(async (req) => {
 
     const { error: insertError } = await admin.from("visited_places").insert({
       user_id: user.id,
-      place_name,
-      place_description: place_description ?? null,
-      latitude: latitude ?? null,
-      longitude: longitude ?? null,
+      place_id: resolvedPlaceId,
+      place_name: resolvedPlaceName,
+      place_description: resolvedPlaceDescription,
+      latitude: resolvedLatitude,
+      longitude: resolvedLongitude,
     });
 
     if (insertError) {
