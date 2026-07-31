@@ -73,8 +73,13 @@ Deno.serve(async (req) => {
 
     const { data, error } = await admin
       .from('profiles')
-      .update(updates)
-      .eq('id', user.id)
+      .upsert(
+        {
+          id: user.id,
+          ...updates,
+        },
+        { onConflict: 'id' },
+      )
       .select('id, display_name, avatar_url, updated_at')
       .single();
 

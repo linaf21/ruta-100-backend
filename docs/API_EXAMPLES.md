@@ -56,3 +56,21 @@ curl -X POST "https://$SUPABASE_PROJECT_REF.supabase.co/functions/v1/upsert-prof
     "avatar_url": "https://example.com/avatar.jpg"
   }'
 ```
+
+## 5) seed-my-products
+
+```bash
+curl -X POST "https://$SUPABASE_PROJECT_REF.supabase.co/functions/v1/seed-my-products" \
+  -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{}'
+```
+
+Force re-seed:
+
+```bash
+curl -X POST "https://$SUPABASE_PROJECT_REF.supabase.co/functions/v1/seed-my-products" \
+  -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{ "force": true }'
+```

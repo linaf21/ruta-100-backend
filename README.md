@@ -53,6 +53,7 @@ Seguir la guía en `docs/EXPO_INTEGRATION.md`.
    - `toggle-favorite`
    - `get-my-progress`
    - `upsert-profile`
+   - `seed-my-products`
 
 ## 7) Funciones disponibles
 
@@ -78,6 +79,11 @@ Seguir la guía en `docs/EXPO_INTEGRATION.md`.
    - `{ "avatar_url": "https://..." }`
    - o ambos campos
 - Actualiza el perfil del usuario autenticado y retorna perfil actualizado.
+
+5. `seed-my-products` (POST)
+- Inserta un set de productos demo para el usuario autenticado.
+- Idempotente por defecto: si ya tienes productos, no vuelve a insertar.
+- Para forzar re-seed: body `{ "force": true }`.
 
 ## 8) Costo
 
