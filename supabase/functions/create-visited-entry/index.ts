@@ -28,6 +28,29 @@ Deno.serve(async (req) => {
       });
     }
 
+    // Ensure profile row exists to satisfy FK visited_places.user_id -> profiles.id.
+    const { error: ensureProfileError } = await admin.from("profiles").upsert(
+      {
+        id: user.id,
+        display_name:
+          (typeof user.user_metadata?.full_name === "string" && user.user_metadata.full_name) ||
+          (typeof user.user_metadata?.name === "string" && user.user_metadata.name) ||
+          null,
+        avatar_url:
+          typeof user.user_metadata?.avatar_url === "string"
+            ? user.user_metadata.avatar_url
+            : null,
+      },
+      { onConflict: "id" }
+    );
+
+    if (ensureProfileError) {
+      return new Response(JSON.stringify({ error: ensureProfileError.message }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     const body = await req.json();
     const { place_id, place_name, place_description, latitude, longitude } = body;
 
