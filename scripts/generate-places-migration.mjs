@@ -68,6 +68,8 @@ const timestamp = new Date()
   .replace(/[-:TZ.]/g, '')
   .slice(0, 14);
 
+// Supabase migration version parser reads the numeric prefix.
+// Use a fully numeric timestamp prefix to keep each migration unique.
 const fileName = `${timestamp}_seed_places_catalog.sql`;
 const outputPath = path.resolve(cwd, 'supabase', 'migrations', fileName);
 

@@ -4,6 +4,7 @@
 
 # Supabase local runtime
 .supabase/
+supabase/.temp/
 
 # Local data sources for generated migrations
 data/places.seed.json
